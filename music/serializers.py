@@ -6,20 +6,20 @@ class ArtistSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Artist
-        fields = ("name", "image", "last_update")
+        fields = "__all__"
 
 
 class AlbumSerializer(serializers.ModelSerializer):
-    artist = ArtistSerializer()
+    artist = ArtistSerializer(read_only=True)
 
     class Meta:
         model = Album
-        fields = ("title", "cover_image", "last_update", "artist")
+        fields = "__all__"
 
 
 class SongSerializer(serializers.ModelSerializer):
-    album = AlbumSerializer()
+    album = AlbumSerializer(read_only=True)
 
     class Meta:
         model = Song
-        fields = ("title", "cover_image", "last_update", "album")
+        fields = "__all__"
