@@ -22,5 +22,3 @@ class Song(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE, null=True, blank=True)
     last_update = models.DateTimeField(auto_now=True)
     create_date = models.DateField(auto_now_add=True)
-
-
