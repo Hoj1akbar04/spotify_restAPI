@@ -3,6 +3,8 @@ from .views import LandingPageView, SongAPIViewSet, AlbumAPIViewSet, ArtistAPIVi
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
 from rest_framework import viewsets
+from django.contrib import admin
+
 
 router = DefaultRouter()
 router.register("songs", viewset=SongAPIViewSet)
